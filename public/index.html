@@ -1,137 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="JamiiDrive's API." />
-    <title>Conceptual Designs</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JamiiDrive's API." />
+  <title>Conceptual Designs</title>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+  />
+  <style>
+    /* Your CSS styles */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Coming soon...</h1>
+  </header>
+  <div id="countdown"></div>
+  <footer>
+    <p>© Conceptual Designs 2024 - All rights reserved.</p>
+  </footer>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("2024-03-08T12:00:00").getTime();
+
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+      // Get the current date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the countdown date
+      var distance = countDownDate - now;
+
+      // Calculate days, hours, minutes, and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the countdown in the element with id="countdown"
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
+        minutes + "m " + seconds + "s ";
+
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
       }
-
-      body {
-        font-family: "Poppins", Arial, Helvetica, sans-serif;
-        background-color: #e1e9fe;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
-
-      /* Style the header */
-      header {
-        background-color: #e1e9fe;
-        position: relative;
-        top: 20vh;
-        padding: 30px;
-        text-align: center;
-        font-size: 35px;
-        color: #202237;
-      }
-
-      /* Style the countdown timer */
-      #countdown {
-        font-size: 24px;
-        color: #202237; /* Match the header color */
-        margin-top: 20px;
-      }
-
-      /* Style the footer */
-      footer {
-        background-color: #e1e9fe;
-        padding: 10px;
-        text-align: center;
-        color: #202237;
-        width: 100%;
-      }
-
-      /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-      @media (max-width: 600px) {
-        nav,
-        article {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      div {
-        width: 75%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      /* Button styles */
-      .button {
-        background-color: #202237;
-        color: #e1e9fe;
-        border: 1px solid #202237;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-top: 20px;
-        cursor: pointer;
-        border-radius: 15px;
-      }
-
-      .button:hover {
-        background-color: transparent; /* Transparent background on hover */
-        color: #202237; /* Text color matches button background */
-        border-color: #202237; /* Border color matches button background */
-        cursor: pointer; /* Cursor changes to hand on hover */
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Coming soon...</h1>
-    </header>
-    <div id="countdown"></div>
-    <footer>
-      <p>© Conceptual Designs 2024 - All rights reserved.</p>
-    </footer>
-    <script>
-      // Set the date we're counting down to
-      var countDownDate = new Date("2024-03-08T12:00:00").getTime();
-
-      // Update the countdown every 1 second
-      var x = setInterval(function() {
-
-        // Get the current date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the countdown date
-        var distance = countDownDate - now;
-
-        // Calculate days, hours, minutes, and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the countdown in the element with id="countdown"
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-
-        // If the countdown is over, display a message
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("countdown").innerHTML = "EXPIRED";
-        }
-      }, 1000);
-    </script>
-  </body>
+    }, 1000);
+  </script>
+</body>
 </html>
