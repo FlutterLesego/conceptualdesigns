@@ -1,102 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="JamiiDrive's API." />
-    <title>Conceptual Designs</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conceptual designs website." />
+  <title>Conceptual Designs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" />
+  <style>
+    /* Your existing styles */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Coming soon...</h1>
+    <div id="countdown"></div> <!-- Countdown timer will be displayed here -->
+  </header>
+  <div id="root">
+    <p></p>
+  </div>
+  <footer>
+    <p>© Conceptual Designs 2024 - All rights reserved.</p>
+  </footer>
 
-      body {
-        font-family: "Poppins", Arial, Helvetica, sans-serif;
-        background-color: #e1e9fe;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
+  <script>
+    // Set the date for the countdown (e.g., the release date)
+    const releaseDate = new Date('2024-03-08T12:00:00');
 
-      /* Style the header */
-      header {
-        background-color: #e1e9fe;
-        position: relative;
-        top: 20vh;
-        padding: 30px;
-        text-align: center;
-        font-size: 35px;
-        color: #202237;
-      }
+    // Update the countdown every second
+    const countdownElement = document.getElementById('countdown');
+    setInterval(() => {
+      const currentDate = new Date();
+      const timeDifference = releaseDate - currentDate;
 
-      /* Style the footer */
-      footer {
-        background-color: #e1e9fe;
-        padding: 10px;
-        text-align: center;
-        color: #202237;
-        width: 100%;
-      }
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-      @media (max-width: 600px) {
-        nav,
-        article {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      div {
-        width: 75%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      /* Button styles */
-      .button {
-        background-color: #202237;
-        color: #e1e9fe;
-        border: 1px solid #202237;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-top: 20px;
-        cursor: pointer;
-        border-radius: 15px;
-      }
-
-      .button:hover {
-        background-color: transparent; /* Transparent background on hover */
-        color: #202237; /* Text color matches button background */
-        border-color: #202237; /* Border color matches button background */
-        cursor: pointer; /* Cursor changes to hand on hover */
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Conceptual Designs</h1>
-    </header>
-    <div id="root">
-      <p>Coming soon...</p>
-    </div>
-    <footer>
-      <p>© Conceptual Designs 2024 - All rights reserved.</p>
-    </footer>
-  </body>
+      // Display the countdown
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+</body>
 </html>
