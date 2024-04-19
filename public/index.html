@@ -8,10 +8,26 @@
   <title>Conceptual Designs</title>
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-  />
+    href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"  />
   <style>
-    /* Your CSS styles */
+    svg{
+  max-width: 80vmin;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.textcircle {
+  transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+  transform-origin: 250px 250px;
+}
+
+svg:hover .textcircle {
+  transform: scale(1.2) rotate(90deg);
+}
   </style>
 </head>
 <body>
@@ -30,7 +46,7 @@
                       xlink:href="#textcircle" 
                       aria-label="CSS & SVG are awesome" 
                       textLength="940">
-              CSS &amp; Conceptual Designs | CSS &amp; Conceptual Designs |&#160;
+              Conceptual Designs | Conceptual Designs |&#160;
             </textPath>
           </text>
         </g>
